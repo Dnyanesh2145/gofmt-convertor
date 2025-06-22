@@ -1,8 +1,6 @@
 package main
 
-import "gofmt-convertor/gofmt-convertor/cmd"
-
-
+import "github.com/Dnyanesh2145/gofmt-convertor/cmd"
 
 func main() {
 	cmd.Execute()

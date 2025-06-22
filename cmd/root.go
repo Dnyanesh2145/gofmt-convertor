@@ -2,22 +2,21 @@ package cmd
 
 import (
 	"fmt"
-	"gofmt-convertor/gofmt-convertor/internal/parser"
-	"gofmt-convertor/gofmt-convertor/internal/writer"
 	"os"
 
+	"github.com/Dnyanesh2145/gofmt-convertor/internal/parser"
+	"github.com/Dnyanesh2145/gofmt-convertor/internal/writer"
 	"github.com/spf13/cobra"
 )
 
 var (
-	input     string
-	output    string
-	inFormat  string
-	outFormat string
+	input      string
+	output     string
+	inFormat   string
+	outFormat  string
 	// filterCond string
 	// sortOption string
 )
-
 func init() {
 	rootCmd.Flags().StringVar(&input, "input", "", "Input file path")
 	rootCmd.Flags().StringVar(&output, "output", "", "Output file path")
@@ -27,9 +26,15 @@ func init() {
 	// rootCmd.Flags().StringVar(&sortOption, "sort", "", "Sort column (e.g., name:asc)")
 }
 
+
 var rootCmd = &cobra.Command{
 	Use:   "csv-converter-cli",
 	Short: "Convert between CSV, JSON, YAML, XML, Excel with filtering and sorting",
+	Long: `Data Converter CLI is a tool to convert between structured file formats.
+
+	Examples:
+	  data-converter --input file.csv --output out.json --format csv --out-format json
+	  data-converter --input data.yaml --output result.xlsx --format yaml --out-format excel`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var parser parser.Parser
 		records, err := parser.ParseFile(input, inFormat)
