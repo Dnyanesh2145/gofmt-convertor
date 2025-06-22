@@ -9,8 +9,6 @@ Built using **clean architecture**, **SOLID principles**, and **extensible desig
 ## 🚀 Features
 
 - ✅ Convert between CSV, JSON, YAML, XML, Excel
-- 🔍 Filter data (e.g., `--filter "age>25"`)
-- 📈 Sort data by any column (e.g., `--sort "name:asc"`)
 - ♻️ Bi-directional support (any-to-any format)
 - 🧱 Modular architecture for extension
 
@@ -56,18 +54,6 @@ gofmt-convertor --input data.csv --output data.json --format csv --out-format js
 ```bash
 gofmt-convertor --input data.json --output result.xlsx --format json --out-format excel
 ```
-
-#### Convert YAML to CSV with filter:
-```bash
-gofmt-convertor --input data.yaml --output filtered.csv --format yaml --out-format csv --filter "status=active"
-```
-
-#### Convert and sort by a column:
-```bash
-gofmt-convertor --input employees.csv --output sorted.yaml --format csv --out-format yaml --sort "salary:desc"
-```
-
----
 
 ## 🛠 Flags
 

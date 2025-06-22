@@ -28,7 +28,7 @@ func init() {
 
 
 var rootCmd = &cobra.Command{
-	Use:   "csv-converter-cli",
+	Use:   "gofmt-convertor",
 	Short: "Convert between CSV, JSON, YAML, XML, Excel with filtering and sorting",
 	Long: `Data Converter CLI is a tool to convert between structured file formats.
 
